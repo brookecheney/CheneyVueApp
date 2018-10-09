@@ -1,21 +1,34 @@
 <template>
-
+<div>
    <v-layout row>
      <v-flex xs2 sm2 offset-sm6>
-     <h2>Server Status: </h2>
+     <h2>Server Status:  {{ status }} </h2>
+     <hr>
+     <button @click="changeStatus">Change Status</button>
      
     </v-flex>
 
   </v-layout>
-
+</div>
   </template>
 
 
 
 <script>
 export default {
+   data: function() {
+      return {
+        status: 'Critical'
+      }
+    },
+    methods: {
+      changeStatus() {
+        this.status = 'Normal';
+      }
+    }
+  }
   
-}
+
  
 </script>
 
